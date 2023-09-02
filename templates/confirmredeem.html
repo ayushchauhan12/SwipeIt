@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Profile Page{% endblock title %}
+{% block body %}
+<section id="portfolio" class="portfolio">
+    <div class="container">
+<h3>are you sure you want to redeem this product</h3>
+        <form method="POST" action="/redeem">
+            {%csrf_token%}
+            <input type="hidden" name="name" value="{{name}}">
+            <input type="hidden" name="tokens" value="{{tokens_spent}}">
+            <button type="submit" class="btn btn-success">YES</button>
+            <a href="/about"><button type="button" class="btn btn-danger">NO</button></a>
+        </form>
+
+
+    </div>
+</section>
+{% endblock body %}

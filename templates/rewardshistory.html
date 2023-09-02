@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block title %}Profile Page{% endblock title %}
+{% block body %}
+<section id="portfolio" class="portfolio">
+    <div class="container">
+<h1>My Profile</h1>
+
+<a href="/profile"><button type="button" class="btn btn-info">GO BACK</button></a>
+<h3>SEE YOUR REWARDS REDEMPTION HISTORY:</h3><br>
+<table class="table table-info table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Order ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">tokens</th>
+        <!-- <th scope="col">Amount Paid</th>
+        <th scope="col">Payment Status</th>
+        <th scope="col">Address</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">Delivery Status</th>
+        <th scope="col">Delivered</th>
+        <th scope="col">Date</th> -->
+      </tr>
+    </thead>
+    <tbody>
+
+        {% for i  in items %}
+
+        <tr>
+            <th scope="row">{{forloop.counter}} </th>
+            <td> {{i.product_name}}</td>
+            <td>{{i.tokens}} </td>
+            <!-- <td>{{i.amount}} </td>
+            <td> {{i.paymentstatus}}</td>
+            <td> {{i.address1}}</td>
+            <td> {{i.phone}}</td> -->
+
+          
+  
+          
+        
+        {% endfor %}
+
+
+
+    </tbody>
+</table>
+    </div>
+</section>
+{% endblock body %}
